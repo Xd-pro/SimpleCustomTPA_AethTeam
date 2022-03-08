@@ -35,6 +35,5 @@ class delayBeforeTeleport extends Task{
         }
         $this->player->sendActionBarMessage(str_replace("{time}",$this->time,$cfg->getNested("delayBeforeTeleportation.message")));
         var_dump("");
-        $this->time--;
     }
 }

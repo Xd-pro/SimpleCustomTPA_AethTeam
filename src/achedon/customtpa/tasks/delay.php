@@ -22,13 +22,12 @@ class delay extends Task{
         if($this->time == 0){
             if(isset(tpa::$REQUEST[$this->player->getName()])){
                 $this->player->sendMessage(messageManager::message("You request have been deleted"));
-                var_dump($this->time);
                 unset(tpa::$REQUEST[$this->player->getName()]);
                 $this->getHandler()->cancel();
             }
         }
         if(!isset(tpa::$REQUEST[$this->player->getName()])){
-            $this->getHandler()->cancel();
+            $this->getHandler()?->cancel();
         }
         $this->time--;
     }
